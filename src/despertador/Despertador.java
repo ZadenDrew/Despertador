@@ -8,6 +8,7 @@ import java.util.Date;
 /**
  *
  * @author andrea
+ * @version 2.1
  */
 public class Despertador {
 

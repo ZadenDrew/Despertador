@@ -12,7 +12,9 @@ public class Reloj extends Thread {
     private final SimpleDateFormat formato;
     private final Calendar c = Calendar.getInstance();
     public Date horaDespertar = new Date(System.currentTimeMillis());
-
+/**
+ * 
+ */
     public Reloj() {
         super();
         encendido = true;
@@ -20,7 +22,9 @@ public class Reloj extends Thread {
         formato = new SimpleDateFormat("HH:mm:ss");
 
     }
-
+/**
+ * 
+ */
     public void timeDespertar() {
         c.setTime(horaDespertar);
         int dia = c.get(Calendar.DAY_OF_WEEK) - 1;
@@ -65,11 +69,15 @@ public class Reloj extends Thread {
             System.err.println("Ups! No me puedo detener " + ex.getMessage());
         }
     }
-
+/**
+ * 
+ */
     public void detener() {
         detenido = true;
     }
-
+/**
+ * 
+ */
         public void detenerAl() {
         this.detenerAlarma = true;
     }
@@ -100,7 +108,9 @@ public class Reloj extends Thread {
             }
         }
     }
-
+/**
+ * 
+ */
     public void reanudar() {
         detenido = false;
         synchronized (this) {
