@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="despertador">
+  <ClassDiagramComponents>
+    <Class name="Display" package="alarma" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="despertar" type="Time" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="mostrarHora" returnType="void" visibility="public">
+          <Argument type="Reloj" name="clock"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Reloj" package="alarma" visibility="public" xPosition="241.0" yPosition="160.0">
+      <Fields>
+        <Field name="encendido" type="boolean" visibility="private"/>
+        <Field name="detenido" type="boolean" visibility="private"/>
+        <Field name="detenerAlarma" type="boolean" visibility="private" isStatic="true"/>
+        <Field name="formato" type="SimpleDateFormat" visibility="private" isFinal="true"/>
+        <Field name="c" type="Calendar" visibility="private" isFinal="true"/>
+        <Field name="horaDespertar" type="Date" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="timeDespertar" returnType="void" visibility="public"/>
+        <Method name="getHoraDespertar" returnType="Date" visibility="public"/>
+        <Method name="parar" returnType="void" visibility="public"/>
+        <Method name="detener" returnType="void" visibility="public"/>
+        <Method name="detenerAl" returnType="void" visibility="public"/>
+        <Method name="isDetenido" returnType="boolean" visibility="public" isStatic="true"/>
+        <Method name="run" returnType="void" visibility="public"/>
+        <Method name="reanudar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Time" package="alarma" visibility="public" xPosition="461.0" yPosition="30.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="run" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Despertador" package="despertador" visibility="public" xPosition="471.0" yPosition="202.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="alarma.Display" target="alarma.Reloj" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="despertar" source="alarma.Display" target="alarma.Time" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
