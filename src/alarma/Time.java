@@ -4,15 +4,19 @@ import java.util.Calendar;
 import java.util.TimerTask;
 
 /**
- *
- * @author andrea
+ * Clase que extiende de TimerTask
+ * @author  acabezaslopez
  */
 public class Time extends TimerTask {
-
+/**
+ * Constructor por defecto de tipo Time
+ */
     public Time() {
     }
 /**
- * 
+ * Método que ejecuta el hilo de alarma teniendo en cuenta el día de la semana
+ * Nuestra Alarma sólo sonara de lunes a viernes
+ * No devuelve nada 
  */
     @Override
     public void run() {

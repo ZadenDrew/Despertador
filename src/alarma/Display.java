@@ -3,18 +3,20 @@ package alarma;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author andrea
+ *Esta es la clase para mostrar el menú
+ * @author  acabezaslopez
  */
 public class Display {
 
     Time despertar = new Time();
-
+/**
+ * Constructor por defecto
+ */
     public Display() {
     }
 /**
- * 
- * @param clock 
+ * Método que muestra al usuario las opciones del menú
+ * @param clock es un objeto tipo Reloj con el cual puedo llamar a los métodos necesarios
  */
     public void mostrarHora(Reloj clock) {
 
@@ -22,9 +24,9 @@ public class Display {
         do {
             System.out.println("1. Arrancar");
             System.out.println("2. Detener");
-            System.out.println("3. Detener Alarma");
+            System.out.println("3. Detener Alarma\\ON/OFF");
             System.out.println("4. Reanudar");
-            System.out.println("5. Alarma");
+            System.out.println("5. Alarma \\SET HR/SET ALARMA");
             System.out.println("6. Parar Reloj");
             System.out.println("7. Salir");
             System.out.print("-> \n");

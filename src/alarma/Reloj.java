@@ -3,7 +3,10 @@ package alarma;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import javax.swing.JOptionPane;
-
+/**
+ * Clase para trabajar con el hilo que extiende de thread
+ * @author acabezaslopez
+ */
 public class Reloj extends Thread {
 
     private boolean encendido;
@@ -13,7 +16,7 @@ public class Reloj extends Thread {
     private final Calendar c = Calendar.getInstance();
     public Date horaDespertar = new Date(System.currentTimeMillis());
 /**
- * 
+ * Constructor de Reloj
  */
     public Reloj() {
         super();
@@ -23,7 +26,8 @@ public class Reloj extends Thread {
 
     }
 /**
- * 
+ * Método en el que se solicita al usuario la hora,minuto,segundo para programar la alarma
+ * No devuelve nada
  */
     public void timeDespertar() {
         c.setTime(horaDespertar);
@@ -53,13 +57,16 @@ public class Reloj extends Thread {
                 new Time(), horaDespertar, tiempoRepeticion);
     }
 /**
- * 
- * @return 
+ * Método getter devuelve una variable tipo Date
+ * @return  devuelve objeto tipo Date horaDespertar que contiene la hora de nuestra alarma
  */
     public Date getHoraDespertar() {
         return horaDespertar;
     }
-
+/**
+ * Método que para el hilo del rejol y lanza una excepción sino se puede parar 
+ * No devuelve nada
+ */
     public void parar() {
         encendido = false;
         detenido = true;
@@ -70,27 +77,33 @@ public class Reloj extends Thread {
         }
     }
 /**
- * 
+ * Método que detiene el hilo del reloj
+ * No devuelve nada
  */
     public void detener() {
         detenido = true;
     }
 /**
  * 
+ * Método que detiene el hilo de alarma
+ * No devuelve nada
  */
         public void detenerAl() {
         this.detenerAlarma = true;
     }
     /**
-     * 
-     * @return 
+     * Método getter que devuelve detenerAlarma
+     * @return detenerAlarma variable de tipo boolean
      */
     public static boolean isDetenido() {
         return detenerAlarma;
     }
-    
+    /**
+     * Código ejecutable por el hilo que muestra el tiempo de sistema segundo a segundo
+     * Código ejecutable por el hilo
+     */
     @Override
-    public void run() { //Código ejecutable por el hilo
+    public void run() { 
         while (encendido) {
             if (detenido) {
                 synchronized (this) {
@@ -109,7 +122,8 @@ public class Reloj extends Thread {
         }
     }
 /**
- * 
+ * Método que reanuda la ejecución del hilo
+ * No devuelve nada
  */
     public void reanudar() {
         detenido = false;

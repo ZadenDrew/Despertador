@@ -7,13 +7,14 @@ import java.util.Date;
 
 /**
  *
- * @author andrea
- * @version 2.1
+ * @author  acabezaslopez
+ * @version 3.0
  */
 public class Despertador {
 
     /**
-     * @param args the command line arguments
+     * Esta es la clase principal del proyecto
+     * @param args the command line arguments 
      */
     public static void main(String[] args) {
         Date fecha = new Date();
